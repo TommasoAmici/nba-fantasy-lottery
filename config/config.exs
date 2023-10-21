@@ -13,7 +13,7 @@ config :nba_lottery,
 # Configures the endpoint
 config :nba_lottery, NbaLotteryWeb.Endpoint,
   url: [host: "localhost"],
-  adapter: Phoenix.Endpoint.Cowboy2Adapter,
+  adapter: Bandit.PhoenixAdapter,
   render_errors: [
     formats: [html: NbaLotteryWeb.ErrorHTML, json: NbaLotteryWeb.ErrorJSON],
     layout: false
