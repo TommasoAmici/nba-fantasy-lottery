@@ -11,6 +11,7 @@ defmodule NbaLottery.Application do
       NbaLotteryWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:nba_lottery, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: NbaLottery.PubSub},
+      NbaLotteryWeb.LotteryServer,
       # Start a worker by calling: NbaLottery.Worker.start_link(arg)
       # {NbaLottery.Worker, arg},
       # Start to serve requests, typically the last entry

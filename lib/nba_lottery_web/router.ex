@@ -17,7 +17,7 @@ defmodule NbaLotteryWeb.Router do
   scope "/", NbaLotteryWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", LotteryLive
   end
 
   # Other scopes may use custom stacks.
