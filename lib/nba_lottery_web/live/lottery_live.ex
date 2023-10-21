@@ -71,31 +71,33 @@ defmodule NbaLotteryWeb.LotteryLive do
           </ul>
         </aside>
         <main class="lg:col-span-6 h-full relative">
-          <div :if={length(@teams) != length(@extracted)} class="flex justify-center mt-8">
-            <div class="flex flex-col">
-              <button
-                phx-click="extract"
-                class="bg-[#1c428a] hover:opacity-90 p-4 text-lg rounded-md text-white font-semibold uppercase"
-              >
-                Estrai
-              </button>
-              <button phx-click="reset" class="text-[#1c428a] hover:opacity-90 p-4 text-md">
-                Reset
-              </button>
+          <div class="min-h-[200px]">
+            <div :if={length(@teams) != length(@extracted)} class="flex justify-center mt-8">
+              <div class="flex flex-col">
+                <button
+                  phx-click="extract"
+                  class="bg-[#1c428a] hover:opacity-90 p-4 text-lg rounded-md text-white font-semibold uppercase"
+                >
+                  Estrai
+                </button>
+                <button phx-click="reset" class="text-[#1c428a] hover:opacity-90 p-4 text-md">
+                  Reset
+                </button>
+              </div>
             </div>
-          </div>
 
-          <section
-            :if={length(@extracted) > 0}
-            class="flex justify-center flex-col items-center mt-12"
-          >
-            <h2 class="font-semibold text-3xl">Vincitori</h2>
-            <ul class="flex flex-col gap-2">
-              <li :for={team <- @extracted |> Enum.reverse()}>
-                <.team_card name={team.name} logo={team.logo} />
-              </li>
-            </ul>
-          </section>
+            <section
+              :if={length(@extracted) > 0}
+              class="flex justify-center flex-col items-center my-12"
+            >
+              <h2 class="font-semibold text-3xl">Vincitori</h2>
+              <ul class="flex flex-col gap-2">
+                <li :for={team <- @extracted |> Enum.reverse()}>
+                  <.team_card name={team.name} logo={team.logo} />
+                </li>
+              </ul>
+            </section>
+          </div>
 
           <div class="w-full overflow-hidden absolute bottom-0">
             <div class="flex animate-slide">
