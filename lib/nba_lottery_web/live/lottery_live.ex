@@ -72,9 +72,10 @@ defmodule NbaLotteryWeb.LotteryLive do
         </aside>
         <main class="lg:col-span-6 h-full relative">
           <div class="min-h-[200px]">
-            <div :if={length(@teams) != length(@extracted)} class="flex justify-center mt-8">
+            <div class="flex justify-center mt-8">
               <div class="flex flex-col">
                 <button
+                  :if={length(@teams) != length(@extracted)}
                   phx-click="extract"
                   class="bg-[#1c428a] hover:opacity-90 p-4 text-lg rounded-md text-white font-semibold uppercase"
                 >
