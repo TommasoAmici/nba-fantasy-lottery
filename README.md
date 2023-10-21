@@ -6,6 +6,8 @@ NBA fantasy league. It is also the first non-tutorial Phoenix app I write.
 The teams are hard coded, the lottery odds are hard coded, but using a GenServer
 the state of the draft is shared across clients.
 
+https://github.com/TommasoAmici/nba-fantasy-lottery/assets/424525/b1f5b020-c8fa-45a6-923d-886fef804e18
+
 ## Getting started
 
 To start your Phoenix server:
